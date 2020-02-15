@@ -1,6 +1,6 @@
 import Foundation
 
-open class DependencyInjectionModule: NSObject {
+open class SwiftInjectModule: NSObject {
     
     public let container: InjectionContainer
     

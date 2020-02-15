@@ -9,11 +9,11 @@ public class SwiftInjectManager {
         let autoreleasingAllClasses = AutoreleasingUnsafeMutablePointer<AnyClass>(allClasses)
         let actualClassCount: Int32 = objc_getClassList(autoreleasingAllClasses, expectedClassCount)
         
-        var dependencyInjectionModules = [DependencyInjectionModule.Type]()
+        var dependencyInjectionModules = [SwiftInjectModule.Type]()
         for i in 0 ..< actualClassCount {
             if let currentClass = allClasses[Int(i)] {
-                if (class_getSuperclass(currentClass) == DependencyInjectionModule.self) {
-                    dependencyInjectionModules.append(currentClass as! DependencyInjectionModule.Type)
+                if (class_getSuperclass(currentClass) == SwiftInjectModule.self) {
+                    dependencyInjectionModules.append(currentClass as! SwiftInjectModule.Type)
                 }
             }
         }
