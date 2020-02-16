@@ -58,3 +58,23 @@ class UserInfoViewController: UIViewController {
     }
 }
 ```
+
+#### Using the container directly
+
+If using `@Inject` isn't appropriate or you only need things from the container in a reduce scope, you can resolve them directly from the container.
+
+```swift
+class UserInfoViewController: UIViewController {
+
+    let user: User
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let userInfoProvider = SwiftInjectContainer.default.resolve(UserInfoProvider.self)!
+        
+        userNameLabel.text = userInfoProvider.formatName(user)        
+        userDOBLabel.text = userInfoProvider.formatDOB(user)
+    }
+}
+```
