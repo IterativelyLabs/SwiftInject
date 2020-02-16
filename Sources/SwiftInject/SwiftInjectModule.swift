@@ -2,13 +2,13 @@ import Foundation
 
 open class SwiftInjectModule: NSObject {
     
-    public let container: InjectionContainer
+    public let container: SwiftInjectContainer
     
-    open class func isContainerAllowed(_ container: InjectionContainer) -> Bool {
+    open class func isContainerAllowed(_ container: SwiftInjectContainer) -> Bool {
         return true
     }
     
-    public required init?(container: InjectionContainer = .default) {
+    public required init?(container: SwiftInjectContainer = .default) {
         guard type(of: self).isContainerAllowed(container) else {
             return nil
         }

@@ -2,7 +2,7 @@ import Foundation
 
 public class SwiftInjectManager {
     
-    public init(container: InjectionContainer = .default) {
+    public init(container: SwiftInjectContainer = .default) {
         let expectedClassCount = objc_getClassList(nil, 0)
         let allClasses = UnsafeMutablePointer<AnyClass?>.allocate(capacity: Int(expectedClassCount))
         

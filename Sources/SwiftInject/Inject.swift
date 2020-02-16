@@ -5,15 +5,15 @@ public struct Inject<Value> {
     
     public var wrappedValue: Value?
     
-    public init(name: InjectionContainer.Key?, container: InjectionContainer) {
+    public init(name: SwiftInjectContainer.Key?, container: SwiftInjectContainer) {
         wrappedValue = container.resolve(Value.self, name: name)
     }
     
-    public init(container: InjectionContainer) {
+    public init(container: SwiftInjectContainer) {
         self.init(name: nil, container: container)
     }
     
-    public init(name: InjectionContainer.Key?) {
+    public init(name: SwiftInjectContainer.Key?) {
         self.init(name: name, container: .default)
     }
     

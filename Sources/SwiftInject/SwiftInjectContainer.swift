@@ -18,7 +18,7 @@ class Injection {
     }
 }
 
-public class InjectionContainer {
+public class SwiftInjectContainer {
     
     public struct Key: ExpressibleByStringLiteral {
         
@@ -31,7 +31,7 @@ public class InjectionContainer {
         }
     }
     
-    public static let `default` = InjectionContainer()
+    public static let `default` = SwiftInjectContainer()
     
     public init() { }
     
@@ -47,7 +47,7 @@ public class InjectionContainer {
     }
     
     public func register<T: Any>(_ service: T.Type, name: Key? = nil, mode: InjectionContainerMode,
-                                 resolver: @escaping (InjectionContainer) -> T) {
+                                 resolver: @escaping (SwiftInjectContainer) -> T) {
         let usedName = self.name(forService: service, name: name?.rawValue)
         let injection = Injection(mode: mode, resolver: resolver)
         registrations[usedName] = injection
@@ -63,7 +63,7 @@ public class InjectionContainer {
             return savedValue
         }
         
-        let resolver = registration.resolver as! (InjectionContainer) -> T
+        let resolver = registration.resolver as! (SwiftInjectContainer) -> T
         let value  = resolver(self)
         
         if registration.mode == .useContainer {
