@@ -1,6 +1,9 @@
 # SwiftInject
 
 [![Build Status](https://travis-ci.com/IterativelyLabs/BitriseApiSwift.svg?branch=master)](https://travis-ci.com/IterativelyLabs/BitriseApiSwift)
+![Pod Version](https://cocoapod-badges.herokuapp.com/v/SwiftInject/badge.png)
+![Platforms](https://cocoapod-badges.herokuapp.com/p/SwiftInject/badge.png)
+![License](https://cocoapod-badges.herokuapp.com/l/SwiftInject/badge.(png|svg))
 
 #### Initialising 
 
