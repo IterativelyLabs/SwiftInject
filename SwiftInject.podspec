@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SwiftInject"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "A lightweight dependency injection for Swift projects."
   s.description  = <<-DESC
   A straight-forward and lightweight approach to providing dependency injection for Swift based projects.
